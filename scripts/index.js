@@ -24,13 +24,13 @@ function guardar_fecha()
 		$.post("ajax/index.php?op=guardar_fecha",{escuela:escuela,fecha:fecha,hora1:hora1,hora2:hora2,detalle:detalle},function(data, status)
 		{
 			data = JSON.parse(data);
-			alert("Registro guardado exitosamente");
+			bootbox.alert("Registro guardado exitosamente");
 
 			listar_horarios_det();
 			
 		});
 	}else{
-		alert("Por favor capture los datos requeridos (*)")
+		bootbox.alert("Por favor capture los datos requeridos (*)")
 	}
 
 		
@@ -85,7 +85,7 @@ function editar_horario(iddetalle,nom_esc,fecha,hora1,hora2,detalle)
 					$.post("ajax/index.php?op=update_fecha",{iddetalle:iddetalle,fecha:fecha,hora1:hora1,hora2:hora2,detalle:detalle},function(data, status)
 					{
 						data = JSON.parse(data);
-						alert("Registro actualizado exitosamente");
+						bootbox.alert("Registro actualizado exitosamente");
 
 						var escuela = $("#escuela").val();
 
